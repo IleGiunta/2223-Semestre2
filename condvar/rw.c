@@ -7,7 +7,8 @@
 // potrebbero essere messi in attesa indefinita
 // se continuano ad arrivare lettori
 
-typedef struct {
+/**/
+typedef struct rw {
   int readers;
   bool writing;
   pthread_cond_t cond;   // condition variable
@@ -15,7 +16,7 @@ typedef struct {
 } rw;
 
 
-// inizializza rw, ne scrittori ne lettori 
+// inizializza rw, né scrittori né lettori 
 void rw_init(rw *z)
 {
   z->readers = 0;
@@ -68,3 +69,17 @@ void write_unlock(rw *z)
   pthread_mutex_unlock(&z->mutex);
 }
 
+/*
+
+rw_init()
+//* esempio scrittura
+write_lock(rw)
+//* actual writing
+write_unlock(rw)
+
+//* esempio lettura
+read_lock(rw)
+//* actual read
+read_unlock(rw)
+
+*/

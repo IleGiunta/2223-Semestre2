@@ -14,7 +14,7 @@ funzioni utili
   os.mkfifo(path)						# crea una named fifo
   os.unlink(path)						# cancella un file
   os.open(path,flags)       # analoga alla open dal C
-  os.read(fd,n)             # leggedal file descriptor fd
+  os.read(fd,n)             # legge dal file descriptor fd
 	struct.pack(format,val)   # trasforma int -> sequenza byte
   struct.unpack(format,bs)  # trasforma sequenza byte -> int
 """

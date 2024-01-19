@@ -4,15 +4,15 @@ import struct,socket,argparse
 
 
 Description = "Esempio di client python per interrogare il server dei primi"
-# defualt HOST e PORT
-HOST = "127.0.0.1"  
-PORT = 65432        
+# default HOST e PORT
+HOST = "127.0.0.1"
+PORT = 65432
 
 
 def main(a,b,host,port):
   # inizializzazione socket client 
   with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    # la prossima chiamata è blocking 
+    # la prossima chiamata è blocking
     s.connect((host, port))
     print("Connesso a", s.getpeername())
     # pronto per inviare la richiesta

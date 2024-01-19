@@ -20,7 +20,7 @@ void *tbody(void *v) {
 }
 
 // thread che effettua la gestione di tutti i segnali
-// usa sigwaitinfo per leggere l'informazine associata ai segnali
+// usa sigwaitinfo per leggere l'informazione associata ai segnali
 void *tgestore(void *v) {
   sigset_t mask;
   sigfillset(&mask);

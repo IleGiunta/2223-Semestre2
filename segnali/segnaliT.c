@@ -6,10 +6,10 @@
 //   handler vs sigwait
 //     * se un thread usa sia un handler che sigwait i segnali
 //       li gestisce sigwait
-//     * se il messaggio è in viato al processo con kill(getpid())
+//     * se il messaggio è inviato al processo con kill(getpid())
 //       la gestione viene fatta da thread principale  
 //     * se blocco tutti i segnali nel main gestisce tutto il 
-//       thread gestore 
+//       thread gestore
 
 
 #if 0
@@ -43,7 +43,7 @@ void mysafehandler(int s)
   // uso gettid che non è async-signal-safe
   int t = gettid(); b[34] = '0' + t%10; b[33] = '0' + (t/10)%10;
   int e = write(1,b,36);  // 1 è il file descriptor di stdout
-  (void) e;               // evita warning "unused variable"   
+  (void) e;               // evita warning "unused variable"
   if(s==SIGUSR2)
      continua = 0;  // per uscire dal ciclo 
 }

@@ -3,7 +3,7 @@
 // conteggio dei primi con thread multipli
 
 // NOTA: questo programma ha solo interesse didattico!
-// dal punto di vista delle prestazionei è una pessima idea 
+// dal punto di vista delle prestazioni è una pessima idea 
 // utilizzare una sola variabile condivisa a cui i thread 
 // accedono continuamente. 
 
@@ -81,7 +81,7 @@ int main(int argc,char *argv[])
   for(int i=0; i<p; i++) 
 		xsem_wait(&sem_finitox,__LINE__, __FILE__);
 
-  // distrugge i semafor 
+  // distrugge i semafori
   xsem_destroy(&sem_a0x,__LINE__, __FILE__);  
   xsem_destroy(&sem_finitox,__LINE__, __FILE__);  
 

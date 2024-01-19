@@ -2,7 +2,7 @@
 // abbreviamo la chiamata alle funzione x...
 #define QUI __LINE__,__FILE__
 
-
+  
 // gestione di heap mediante condition variable
 // per fare si che le stampe riflettano l'effettivo ordine
 // delle operazioni queste sono effettuate quando il 
@@ -18,14 +18,14 @@ typedef struct {
 
 // simula allocazione con spazio limitato
 void richiedi(heap *h, int n) {
-  xpthread_mutex_lock(h->mu,QUI);
+  xpthread_mutex_lock(h->mu, QUI);
   fprintf(stderr,"Richiesti: %4d\n", n);
-  while(n>h->MB)
-    xpthread_cond_wait(h->cv,h->mu,QUI);
+  while(n > h->MB)
+    xpthread_cond_wait(h->cv, h->mu, QUI);
   h->MB -= n;
   fprintf(stderr,"Assegnati: %4d. Rimanenti: %4d\n\n",
-          n,h->MB);
-  xpthread_mutex_unlock(h->mu,QUI);
+          n, h->MB);
+  xpthread_mutex_unlock(h->mu, QUI);
 }
 
 // deallocazione

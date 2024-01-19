@@ -104,7 +104,7 @@ void *pbody(void *arg)
 int main(int argc, char *argv[])
 {
   // leggi input
-  if(argc<4) {
+  if(argc<3) {
     printf("Uso\n\t%s file1 [file2 ...] outfile numt\n", argv[0]);
     exit(1);
   }

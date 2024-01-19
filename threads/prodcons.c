@@ -83,8 +83,8 @@ int main(int argc, char *argv[])
   pthread_t t[p];
   dati a[p];
   sem_t sem_free_slots, sem_data_items;
-  xsem_init(&sem_free_slots,0,Buf_size,__LINE__,__FILE__);
-  xsem_init(&sem_data_items,0,0,__LINE__,__FILE__);
+  xsem_init(&sem_free_slots, 0,Buf_size,__LINE__,__FILE__);
+  xsem_init(&sem_data_items, 0, 0, __LINE__, __FILE__);
   for(int i=0;i<p;i++) {
     // faccio partire il thread i
     a[i].buffer = buffer;
